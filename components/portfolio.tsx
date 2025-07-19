@@ -36,7 +36,7 @@ const Portfolio = () => {
             </Link>
             <Link href={''} className='relative'>
                 <div className='rounded-xl overflow-hidden mb-8 pointer-events-none'>
-                    <Image src={'/logo.jpg'} alt='Portfolio projects' width={800} height={800} className='w-full h-full object-cover' />
+                    <Image src={'/logo.png'} alt='Portfolio projects' width={800} height={800} className='w-full h-full object-cover' />
                 </div>
                 <p className='font-light text-sm text-center text-white/70 mb-2 pointer-events-none'>DESIGN ART</p>
                 <p className='font-medium text-xl text-center pointer-events-none'>Sheno Brand Identity</p>

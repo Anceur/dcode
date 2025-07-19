@@ -19,9 +19,9 @@ export const Home = () => {
             <Header />
             <TextSlide />
             <Services />
-            <Portfolio />
-            <Experience />
-            <Testimonials />
+            {/* <Portfolio /> */}
+            {/* <Experience /> */}
+            {/* <Testimonials /> */}
             <Clients />
             <Blog />
             <Footer />
