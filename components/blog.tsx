@@ -29,40 +29,29 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
             {/* Project Image/Demo */}
             <div className='flex-1 relative'>
                 <div className='relative group'>
-                    <div className={`w-full h-80 rounded-2xl overflow-hidden shadow-2xl ${
-                        project.type === 'mobile' ? 'bg-gradient-to-br from-gray-800 to-gray-900' : 'bg-gradient-to-br from-blue-900 to-purple-900'
-                    }`}>
-                        {project.type === 'mobile' ? (
-                            <div className='flex justify-center items-center h-full'>
-                                <div className='w-48 h-72 bg-black rounded-3xl p-2 shadow-xl relative'>
-                                    {/* Phone notch */}
-                                    <div className='absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-5 bg-black rounded-b-lg z-10'></div>
-                                    {/* Screen content */}
-                                    <div className={`w-full h-full rounded-2xl overflow-hidden ${project.bgColor}`}>
-                                        {project.imageUrl ? (
-                                            <img 
-                                                src={project.imageUrl}
-                                                alt={project.title}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        ) : (
-                                            <div className='w-full h-full flex items-center justify-center'>
-                                                <div className='text-white text-center p-4'>
-                                                    <LucideSmartphone size={32} className='mx-auto mb-2' />
-                                                    <p className='text-xs font-medium'>{project.title}</p>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
+                    <div className='w-full h-80 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-gray-900'>
+                        {project.imageUrl ? (
+                            <img 
+                                src={project.imageUrl}
+                                alt={project.title}
+                                className="max-w-full max-h-full object-contain"
+                            />
                         ) : (
-                            <div className='flex items-center justify-center h-full'>
-                                <div className='w-full h-64 bg-white/10 rounded-lg flex items-center justify-center'>
-                                    <div className='text-white text-center'>
-                                        <LucideGlobe size={48} className='mx-auto mb-2' />
-                                        <p className='text-sm font-medium'>{project.title}</p>
-                                    </div>
+                            <div className={`w-full h-full flex items-center justify-center ${
+                                project.type === 'mobile' ? 'bg-gradient-to-br from-gray-800 to-gray-900' : 'bg-gradient-to-br from-blue-900 to-purple-900'
+                            }`}>
+                                <div className='text-white text-center'>
+                                    {project.type === 'mobile' ? (
+                                        <>
+                                            <LucideSmartphone size={48} className='mx-auto mb-2' />
+                                            <p className='text-sm font-medium'>{project.title}</p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <LucideGlobe size={48} className='mx-auto mb-2' />
+                                            <p className='text-sm font-medium'>{project.title}</p>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -124,12 +113,17 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
                 {/* Action buttons */}
                 <div className='flex gap-4 pt-4'>
-             <button className='flex items-center gap-2 bg-[#00C9D7] hover:bg-[#00b0be] text-white px-6 py-3 rounded-full transition-colors'>
-                <LucideExternalLink size={18} />
-                Live Preview
-                </button>
-
-                
+                    {project.liveUrl && (
+                        <a 
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='flex items-center gap-2 bg-[#00C9D7] hover:bg-[#00b0be] text-white px-6 py-3 rounded-full transition-colors'
+                        >
+                            <LucideExternalLink size={18} />
+                            Live Preview
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -144,7 +138,8 @@ const Portfolio = () => {
             type: 'mobile',
             year: '2025',
             bgColor: 'bg-gradient-to-br from-pink-400 to-yellow-300',
-            imageUrl: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+            imageUrl: '/postgoodflower.png',
+            liveUrl: 'https://play.google.com/store/apps/details?id=com.goodflower', // Add your actual live URL here
             technologies: ['Ionic', 'Firebase', 'Capacitor', 'Firestore', 'Push Notifications'],
             features: [
                 'Browse a wide variety of perfumes by category or scent',
@@ -161,7 +156,8 @@ const Portfolio = () => {
             type: 'mobile',
             year: '2025',
             bgColor: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-            imageUrl: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+            imageUrl: '/postmoudirlist.png',
+            liveUrl: 'https://play.google.com/store/apps/details?id=com.moudir.list&hl=fr', // Add your actual live URL here
             technologies: ['Ionic', 'Firebase', 'Capacitor', 'Firestore', 'Stripe API'],
             features: [
                 'Product browsing with categories and filters',

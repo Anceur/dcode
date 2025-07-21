@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { Target, TrendingUp, Users, BarChart3, Eye, MousePointer, ArrowRight, Check, Zap, Globe, Code, Smartphone } from 'lucide-react';
+import Footer from '@/components/footer';
 
 type PackType = 'starter' | 'professional' | 'enterprise' | 'custom';
 
@@ -189,16 +190,18 @@ const SponsorTeam = () => {
       {/* Hero Header */}
       <div className="relative z-10 pt-20 pb-16 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-6 py-3 mb-8">
-            <Target className="w-6 h-6 text-blue-400" />
-            <span className="text-blue-300 font-semibold">Sponsor Packages</span>
-          </div>
+        <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-[#00C9D7]/20 to-[#00b8c2]/20 backdrop-blur-sm border border-[#00C9D7]/30 rounded-full px-6 py-3 mb-8">
+          <Target className="w-6 h-6 text-[#00C9D7]" />
+          <span className="text-[#00C9D7] font-semibold">Sponsor Packages</span>
+        </div>
+
           
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent mb-6 leading-tight">
             Sponsor Your
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-              Business Growth
-            </span>
+              <span className="block bg-gradient-to-r from-[#00C9D7] via-[#00b8c2] to-[#009dab] bg-clip-text text-transparent font-bold">
+            Business Growth
+          </span>
+
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
@@ -404,6 +407,9 @@ const SponsorTeam = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

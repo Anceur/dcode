@@ -63,17 +63,21 @@ const Navbar = () => {
                 initial="hidden"
                 animate="visible"
             >
-                <Image
-                    src="/logo.png"
-                    alt="Portfolio Logo"
-                    width={120}
-                    height={40}
-                    className="object-contain"
-                />
+                <Link href="/">
+                        <Image
+                            src="/logo.png"
+                            alt="Portfolio Logo"
+                            width={120}
+                            height={40}
+                            className="object-contain cursor-pointer"
+                        />
+                </Link>
+
                 
                 <RevealLinks open={open} isFixed={isFixed} />
                 
-                <Link href="/contact">
+                {/* Hide Contact button on mobile screens */}
+                <Link href="/contact" className="hidden lg:block">
                     <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition duration-300">
                         Contact
                     </button>

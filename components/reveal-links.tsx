@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -17,6 +16,7 @@ type FlipLinkProps = {
     hasDropdown?: boolean;
     isOpen?: boolean;
     onToggle?: () => void;
+    isMobile?: boolean;
 };
 
 type TNavLinks = {
@@ -76,7 +76,7 @@ const loadingContainer = {
     },
 };
 
-const FlipLink = ({ children, href, hasDropdown, isOpen, onToggle }: FlipLinkProps) => {
+const FlipLink = ({ children, href, hasDropdown, isOpen, onToggle, isMobile }: FlipLinkProps) => {
     const linkVariants = {
         initial: { y: 0 },
         hovered: { y: "-100%" },
@@ -88,7 +88,8 @@ const FlipLink = ({ children, href, hasDropdown, isOpen, onToggle }: FlipLinkPro
     };
 
     const handleClick = (e: React.MouseEvent) => {
-        if (hasDropdown) {
+        // Only prevent default and toggle on mobile
+        if (hasDropdown && isMobile) {
             e.preventDefault();
             onToggle?.();
         }
@@ -137,7 +138,7 @@ const FlipLink = ({ children, href, hasDropdown, isOpen, onToggle }: FlipLinkPro
                     ))}
                 </div>
                 
-                {hasDropdown && (
+                {hasDropdown && isMobile && (
                     <ChevronDown 
                         className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     />
@@ -171,22 +172,14 @@ export const RevealLinks: React.FC<RevealLinksProps> = ({ isFixed, open }) => {
                         hasDropdown={!!navlink.dropdown}
                         isOpen={openDropdown === navlink.name}
                         onToggle={() => toggleDropdown(navlink.name)}
+                        isMobile={open}
                     >
                         {navlink.name}
                     </FlipLink>
                     
-                    {/* Desktop Dropdown */}
+                    {/* Desktop Dropdown - Only shows on hover */}
                     {navlink.dropdown && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ 
-                                opacity: openDropdown === navlink.name ? 1 : 0,
-                                y: openDropdown === navlink.name ? 0 : 10,
-                                display: openDropdown === navlink.name ? 'block' : 'none'
-                            }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-2 w-64 bg-[#030712] border border-white/10 rounded-lg shadow-lg py-2 z-50 lg:block hidden"
-                        >
+                        <div className="absolute top-full left-0 mt-2 w-64 bg-[#030712] border border-white/10 rounded-lg shadow-lg py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 hidden lg:block">
                             {navlink.dropdown.map((item, itemIdx) => (
                                 <Link
                                     key={itemIdx}
@@ -196,7 +189,7 @@ export const RevealLinks: React.FC<RevealLinksProps> = ({ isFixed, open }) => {
                                     {item.title}
                                 </Link>
                             ))}
-                        </motion.div>
+                        </div>
                     )}
                     
                     {/* Mobile Dropdown */}
@@ -223,6 +216,17 @@ export const RevealLinks: React.FC<RevealLinksProps> = ({ isFixed, open }) => {
                     )}
                 </li>
             ))}
+            
+            {/* Contact Button in Mobile Menu */}
+            {open && (
+                <li className="lg:hidden border-t border-white/10 mt-2 pt-2">
+                    <Link href="/contact">
+                        <div className="border border-white text-white px-6 py-3 mx-6 my-2 rounded-full text-center hover:bg-white hover:text-black transition duration-300 text-sm uppercase font-semibold">
+                            Contact
+                        </div>
+                    </Link>
+                </li>
+            )}
         </ul>
     );
 };

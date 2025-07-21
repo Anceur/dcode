@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Send } from 'lucide-react'
+import Footer from '@/components/footer';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -177,7 +178,9 @@ const Contact = () => {
                     />
                 ))}
             </div>
-        </div>
+                  {/* Footer */}
+      <Footer />
+    </div>
     )
 }
 
