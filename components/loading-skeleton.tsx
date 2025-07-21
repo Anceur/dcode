@@ -1,5 +1,5 @@
 'use client'
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
 const loadingContainer = {
@@ -20,12 +20,10 @@ const loadingText = {
             duration: 1,
             repeat: Infinity,
             repeatType: 'reverse',
-
         },
     },
-
     exit: {
-        y: -200, // Move up by 20px
+        y: -200,
         opacity: 0,
         transition: {
             duration: 1,
@@ -34,17 +32,18 @@ const loadingText = {
 };
 
 export const LoadingSkeleton = () => {
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true);
+    
     useEffect(() => {
         const timer = setTimeout(() => {
-            setShow(false)
-        }, 1500)
+            setShow(false);
+        }, 1500);
 
-        return () => clearTimeout(timer)
+        return () => clearTimeout(timer);
+    }, []);
 
-    }, [])
     return (
-        <div className="flex h-screen justify-center items-center">
+        <div className="flex h-screen justify-center items-center bg-[#030712]">
             <motion.div
                 className="flex"
                 variants={loadingContainer}
@@ -52,7 +51,11 @@ export const LoadingSkeleton = () => {
                 animate={show ? 'visible' : 'exit'}
             >
                 {['L', 'O', 'A', 'D', 'I', 'N', 'G'].map((letter, index) => (
-                    <motion.span className='text-xl tracking-[30px] font-extralight' key={index} variants={loadingText}>
+                    <motion.span 
+                        key={index} 
+                        variants={loadingText}
+                        className="text-xl tracking-[30px] font-extralight text-white/80"
+                    >
                         {letter}
                     </motion.span>
                 ))}

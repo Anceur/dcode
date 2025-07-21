@@ -32,7 +32,7 @@ const loadingText = {
 
 const Header = () => {
     return (
-        <div className='flex flex-col relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-950 to-slate-900 pt-28 px-2 sm:px-28'>
+        <div className='flex flex-col relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-950 to-slate-900 pt-28 px-2 sm:px-28 overflow-hidden'>
             
             {/* Animated background elements from SponsorTeam */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -41,7 +41,7 @@ const Header = () => {
             </div>
 
             {/* Original dots pattern with reduced opacity */}
-            <div className='opacity-10'>
+            <div className='opacity-10 overflow-hidden'>
                 <motion.div
                     variants={loadingDiv}
                     initial="hidden"
@@ -55,7 +55,7 @@ const Header = () => {
                 variants={loadingText}
                 initial="hidden"
                 animate="visible"
-                className='absolute inset-0 flex items-center justify-center z-0'
+                className='absolute inset-0 flex items-center justify-center z-0 overflow-hidden'
             >
                 {/* <div className='text-[15vw] md:text-[12vw] lg:text-[10vw] font-bold text-white/5 leading-none tracking-wider'>
                     MORPUR
@@ -83,8 +83,8 @@ const Header = () => {
                         A <span className='font-bold'>perfect</span> Place for Your
                     </span>
                     <br />
-                    <span className='bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent font-bold'>
-                        Creative Brand
+                   <span className="bg-gradient-to-r from-[#00C9D7] to-[#00a1b0] bg-clip-text text-transparent font-bold">
+                    Creative Brand
                     </span>
                     <span className='text-white'>.</span>
                 </h1>
@@ -104,8 +104,8 @@ const Header = () => {
                 </div>
             </motion.div>
 
-            {/* Enhanced animated particles with colors */}
-            <div className='absolute inset-0 z-5'>
+            {/* Enhanced animated particles with colors - Fixed positioning */}
+            <div className='absolute inset-0 z-5 overflow-hidden'>
                 {[...Array(30)].map((_, i) => (
                     <motion.div
                         key={i}
@@ -115,8 +115,8 @@ const Header = () => {
                             'bg-white/20'
                         }`}
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 90 + 5}%`, // محدود بين 5% و 95%
+                            top: `${Math.random() * 90 + 5}%`,  // محدود بين 5% و 95%
                         }}
                         animate={{
                             opacity: [0.1, 0.8, 0.1],
@@ -133,15 +133,15 @@ const Header = () => {
                 ))}
             </div>
 
-            {/* Additional floating elements */}
-            <div className='absolute inset-0 z-5'>
+            {/* Additional floating elements - Fixed positioning */}
+            <div className='absolute inset-0 z-5 overflow-hidden'>
                 {[...Array(8)].map((_, i) => (
                     <motion.div
                         key={`glow-${i}`}
                         className='absolute w-32 h-32 rounded-full blur-3xl opacity-20'
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 80 + 10}%`, // محدود بين 10% و 90%
+                            top: `${Math.random() * 80 + 10}%`,  // محدود بين 10% و 90%
                             background: i % 2 === 0 
                                 ? 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)'
                                 : 'radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%)'

@@ -40,7 +40,7 @@ const navLinks: TNavLinks[] = [
         dropdown: [
             { title: 'Packs', url: '/sponsor/packs' },
             { title: 'Our Team', url: '/sponsor/team' },
-            { title: 'Portfolio', url: '/dev/portfolio' },
+            // { title: 'Portfolio', url: '/dev/portfolio' },
             { title: 'Contact Us', url: '/contact' },
         ]
     },
@@ -50,7 +50,7 @@ const navLinks: TNavLinks[] = [
         dropdown: [
              { title: 'Packs', url: '/dev/packs' },
             { title: 'Our Team', url: '/dev/team' },
-            { title: 'Portfolio', url: '/dev/portfolio' },
+        //   <  { title: 'Portfolio', url: '/dev/portfolio' },>
             { title: 'Contact Us', url: '/contact' },
         ]
     },
@@ -60,7 +60,7 @@ const navLinks: TNavLinks[] = [
         dropdown: [
             { title: 'Packs', url: '/formation/packs' },
             { title: 'Our Team', url: '/formation/team' },
-            { title: 'Portfolio', url: '/formation/portfolio' },
+            // { title: 'Portfolio', url: '/formation/portfolio' },
             { title: 'Contact Us', url: '/contact' },
         ]
     },

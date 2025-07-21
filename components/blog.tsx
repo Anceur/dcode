@@ -124,14 +124,12 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
                 {/* Action buttons */}
                 <div className='flex gap-4 pt-4'>
-                    <button className='flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full transition-colors'>
-                        <LucideExternalLink size={18} />
-                        Live Preview
-                    </button>
-                    <button className='flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full transition-colors'>
-                        <LucideCode size={18} />
-                        View Code
-                    </button>
+             <button className='flex items-center gap-2 bg-[#00C9D7] hover:bg-[#00b0be] text-white px-6 py-3 rounded-full transition-colors'>
+                <LucideExternalLink size={18} />
+                Live Preview
+                </button>
+
+                
                 </div>
             </div>
         </motion.div>
