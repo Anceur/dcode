@@ -177,7 +177,7 @@ const Portfolio = () => {
     ];
 
     return (
-        <div className='bg-[#1a1a1a] flex flex-col px-5 sm:px-10 md:px-32 lg:px-20 xl:px-32'>
+        <div className='bg-[#0a0a1a] flex flex-col px-5 sm:px-10 md:px-32 lg:px-20 xl:px-32'>
             {/* Header */}
             <div className='flex flex-col md:flex-row justify-between items-center my-20'>
                 <div className='flex flex-col'>

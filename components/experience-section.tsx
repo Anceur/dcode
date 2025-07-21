@@ -5,7 +5,7 @@ import { LucideArrowUpRight } from 'lucide-react'
 
 const Experience = () => {
     return (
-        <div className="bg-[#1d1d1d] py-20 flex px-10  sm:px-28 flex-col lg:flex-row gap-10">
+        <div className="bg-[#030712] py-20 flex px-10  sm:px-28 flex-col lg:flex-row gap-10">
             <div className='w-full lg:w-1/2 flex flex-col justify-between'>
                 <div className='mb-20'>
                     <p className='px-6 py-2 border border-white/50 rounded-full w-fit uppercase text-xs mb-4'>skills & experience</p>

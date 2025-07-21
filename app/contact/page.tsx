@@ -25,7 +25,7 @@ const Contact = () => {
     };
 
     return (
-        <div className='min-h-screen bg-[#1a1a1a] text-white'>
+        <div className='min-h-screen bg-[#0a0a1a] text-white'>
             {/* Hero Section */}
             <div className='px-4 sm:px-8 lg:px-16 py-20 lg:py-32'>
                 <div className='max-w-7xl mx-auto'>
@@ -67,7 +67,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form Section */}
-            <div className='px-4 sm:px-8 lg:px-16 py-20 bg-[#222222]'>
+            <div className='px-4 sm:px-8 lg:px-16 py-20 bg-[#030712]'>
                 <div className='max-w-7xl mx-auto'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
                         

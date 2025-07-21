@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Portfolio = () => {
     return (
-        <div className='bg-[#1a1a1a] w-full grid relative grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-10  px-5 sm:px-10 pb-20'>
+        <div className='bg-[#020617] w-full grid relative grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-10  px-5 sm:px-10 pb-20'>
 
             <Link href={''} className='w-full md:col-end-2 lg:col-span-2 lg:row-span-2'>
                 <div className='rounded-xl overflow-hidden mb-8 pointer-events-none'>

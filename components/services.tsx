@@ -10,7 +10,7 @@ import Curve from './curve';
 
 const Services = () => {
     return (
-        <div className='bg-[#1a1a1a] w-full h-full relative flex justify-center px-5 sm:px-10'>
+        <div className='bg-[#0a0a1a] w-full h-full relative flex justify-center px-5 sm:px-10'>
             <div className='flex sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg w-full py-28 gap-24 flex-col lg:flex-row'>
                 {/* Left content */}
                 <div className='flex flex-col w-full lg:w-[33%] gap-5'>

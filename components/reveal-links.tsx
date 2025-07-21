@@ -160,7 +160,7 @@ export const RevealLinks: React.FC<RevealLinksProps> = ({ isFixed, open }) => {
                 {
                     'flex-col absolute top-14 left-0 w-full mr-10': open,
                     'hidden': !open && !open,
-                    'bg-[#1d1d1d]': isFixed
+                    'bg-[#030712]': isFixed
                 }
             )}
         >
@@ -185,7 +185,7 @@ export const RevealLinks: React.FC<RevealLinksProps> = ({ isFixed, open }) => {
                                 display: openDropdown === navlink.name ? 'block' : 'none'
                             }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-2 w-64 bg-[#1d1d1d] border border-white/10 rounded-lg shadow-lg py-2 z-50 lg:block hidden"
+                            className="absolute top-full left-0 mt-2 w-64 bg-[#030712] border border-white/10 rounded-lg shadow-lg py-2 z-50 lg:block hidden"
                         >
                             {navlink.dropdown.map((item, itemIdx) => (
                                 <Link

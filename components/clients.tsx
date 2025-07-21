@@ -28,7 +28,7 @@ const items = [
 
 const Clients = () => {
     return (
-        <div className=' flex flex-col gap-10'>
+        <div className='bg-[#020617] flex flex-col gap-10'>
             <div className='flex items-center flex-col justify-center mt-20'>
                 <p className='px-6 py-2 border border-white/50 rounded-full w-fit  uppercase text-xs mb-4'>Our Clients</p>
                 <TextAnimation text="Companies I've Worked With" />

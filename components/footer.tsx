@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <>
             {/* Social Media Section */}
-            <div className='flex flex-col relative pt-28 px-2 sm:px-28'>
+            <div className='bg-[#020617] flex flex-col relative pt-28 px-2 sm:px-28'>
                 <div className='flex flex-col items-center space-y-8'>
                     <h3 className='text-2xl font-light text-center'>Follow Us</h3>
                     
@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright Section */}
-            <div className=' flex lg:flex-row flex-col justify-between lg:items-center px-5 sm:px-10 md:px-32 lg:px-20 xl:px-32 py-10'>
+            <div className='bg-[#020617]  flex lg:flex-row flex-col justify-between lg:items-center px-5 sm:px-10 md:px-32 lg:px-20 xl:px-32 py-10'>
                 <p className='text-xl font-bold text-white'>Portfolio</p>
                 <p className='text-[#ddd] text-sm'>© 2024 Portfolio.</p>
             </div>

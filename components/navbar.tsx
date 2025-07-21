@@ -17,6 +17,7 @@ const loadingContainer = {
         },
     },
 };
+
 const Navbar = () => {
     const [isFixed, setIsFixed] = useState(false);
     const [open, setOpen] = useState(false);
@@ -53,10 +54,10 @@ const Navbar = () => {
     }, [open]);
 
     return (
-        <div className='relative w-full'>
+        <div className='bg-[#030712] relative w-full'>
             <motion.div
-                className={`navbar-container w-full flex justify-between lg:justify-around items-center h-14 lg:h-20 px-10 border-b border-white/5 left-0 z-50 fixed ${
-                    isFixed ? 'bg-[#1d1d1d] -top-20 translate-y-20 duration-1000 transform transition-transform' : 'bg-transparent top-0'
+                className={`bg-[#030712] navbar-container w-full flex justify-between lg:justify-around items-center h-14 lg:h-20 px-10 border-b border-white/5 left-0 z-50 fixed ${
+                    isFixed ? 'bg-[#030712] -top-20 translate-y-20 duration-1000 transform transition-transform' : 'bg-transparent top-0'
                 }`}
                 variants={loadingContainer}
                 initial="hidden"
@@ -79,8 +80,8 @@ const Navbar = () => {
                 </Link>
 
                 <LucideMenu 
-                    className='block lg:hidden cursor-pointer' 
-                    onClick={() => setOpen(!open)} 
+                    className='block lg:hidden cursor-pointer'
+                    onClick={() => setOpen(!open)}
                 />
             </motion.div>
             

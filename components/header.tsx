@@ -32,8 +32,16 @@ const loadingText = {
 
 const Header = () => {
     return (
-        <div className='flex flex-col relative bg-[#1a1a1a] pt-28 px-2 sm:px-28'>
-            <div className='opacity-15'>
+        <div className='flex flex-col relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-950 to-slate-900 pt-28 px-2 sm:px-28'>
+            
+            {/* Animated background elements from SponsorTeam */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-transparent rotate-12 animate-pulse"></div>
+                <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-indigo-600/5 via-violet-600/5 to-transparent -rotate-12 animate-pulse delay-700"></div>
+            </div>
+
+            {/* Original dots pattern with reduced opacity */}
+            <div className='opacity-10'>
                 <motion.div
                     variants={loadingDiv}
                     initial="hidden"
@@ -69,11 +77,16 @@ const Header = () => {
                     <div className='w-8 h-px bg-white/60 ml-4'></div>
                 </div>
 
-                {/* Main heading */}
-                <h1 className='text-4xl md:text-6xl lg:text-7xl font-light text-white leading-tight text-center'>
-                    A <span className='font-bold'>perfect</span> Place for Your
+                {/* Main heading with gradient text like SponsorTeam */}
+                <h1 className='text-4xl md:text-6xl lg:text-7xl font-light leading-tight text-center'>
+                    <span className='bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'>
+                        A <span className='font-bold'>perfect</span> Place for Your
+                    </span>
                     <br />
-                    Creative <span className='font-bold'>Brand</span>.
+                    <span className='bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent font-bold'>
+                        Creative Brand
+                    </span>
+                    <span className='text-white'>.</span>
                 </h1>
             </motion.div>
 
@@ -84,31 +97,63 @@ const Header = () => {
                 animate="visible"
                 className='flex z-10 justify-center mb-20'>
                 <div className='text-center'>
-                    <p className='text-lg text-white/60 mb-8 max-w-2xl mx-auto'>
+                    <p className='text-lg text-gray-300 mb-8 max-w-2xl mx-auto'>
                         We create digital experiences that inspire and transform your ideas into stunning reality
                     </p>
                    
                 </div>
             </motion.div>
 
-            {/* Animated particles */}
+            {/* Enhanced animated particles with colors */}
             <div className='absolute inset-0 z-5'>
-                {[...Array(20)].map((_, i) => (
+                {[...Array(30)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className='absolute w-1 h-1 bg-white/20 rounded-full'
+                        className={`absolute w-1 h-1 rounded-full ${
+                            i % 3 === 0 ? 'bg-blue-400/30' : 
+                            i % 3 === 1 ? 'bg-purple-400/30' : 
+                            'bg-white/20'
+                        }`}
                         style={{
                             left: `${Math.random() * 100}%`,
                             top: `${Math.random() * 100}%`,
                         }}
                         animate={{
-                            opacity: [0.2, 0.8, 0.2],
-                            scale: [1, 1.5, 1],
+                            opacity: [0.1, 0.8, 0.1],
+                            scale: [0.5, 2, 0.5],
+                            y: [0, -20, 0],
                         }}
                         transition={{
-                            duration: 2 + Math.random() * 2,
+                            duration: 3 + Math.random() * 3,
                             repeat: Infinity,
                             delay: Math.random() * 2,
+                            ease: "easeInOut"
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Additional floating elements */}
+            <div className='absolute inset-0 z-5'>
+                {[...Array(8)].map((_, i) => (
+                    <motion.div
+                        key={`glow-${i}`}
+                        className='absolute w-32 h-32 rounded-full blur-3xl opacity-20'
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            background: i % 2 === 0 
+                                ? 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)'
+                                : 'radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%)'
+                        }}
+                        animate={{
+                            scale: [1, 1.5, 1],
+                            opacity: [0.1, 0.3, 0.1],
+                        }}
+                        transition={{
+                            duration: 4 + Math.random() * 2,
+                            repeat: Infinity,
+                            delay: Math.random() * 3,
                         }}
                     />
                 ))}
