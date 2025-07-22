@@ -152,7 +152,7 @@ const Contact = () => {
                                 <button
                                     type='button'
                                     onClick={handleSubmit}
-                                    className='px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 flex items-center gap-3 group'
+                                    className='px-8 py-4 border border-white/20 rounded-full text-white hover:bg-white hover:text-[#030712] transition-all duration-300 flex items-center gap-3 group'
                                 >
                                     Let's Talk
                                     <Send className='group-hover:translate-x-1 transition-transform duration-300' size={18} />

@@ -90,7 +90,7 @@ const Navbar = () => {
             </motion.div>
             
             <motion.div
-                className="absolute z-50 h-14 lg:h-20 bg-[#1a1a1a] w-full top-0 left-0"
+                className="absolute z-50 h-14 lg:h-20 bg-[#030712] w-full top-0 left-0"
                 initial={{ translateY: 0, display: 'none' }}
                 animate={{
                     translateY: '-100%', 
