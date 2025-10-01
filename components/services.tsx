@@ -15,9 +15,9 @@ const Services = () => {
                 {/* Left content */}
                 <div className='flex flex-col w-full lg:w-[33%] gap-5'>
                     <p className='px-6 py-2 border border-white/50 rounded-full w-fit'>Featured Services</p>
-                    <TextAnimation text='Développement' />
+                    <TextAnimation text='Development' />
                     <p className='text-[#ddd] text-sm'>
-                        Nous proposons des solutions numériques modernes, du design UI/UX à la création d’applications mobiles et de sites e-commerce.
+                        We offer modern digital solutions, from UI/UX design to mobile app creation and e-commerce websites.
                     </p>
                 </div>
 
@@ -37,7 +37,7 @@ const Services = () => {
                             </div>
                             <div className='w-full md:w-[50%]'>
                                 <p className='text-[#ddd]'>
-                                    Création d'interfaces modernes et d’expériences utilisateurs intuitives pour vos applications ou sites web.
+                                    Creating modern interfaces and intuitive user experiences for your apps or websites.
                                 </p>
                             </div>
                         </div>
@@ -56,11 +56,12 @@ const Services = () => {
                             </div>
                             <div className='w-full md:w-[50%]'>
                                 <p className='text-[#ddd]'>
-                                    Développement d’applications performantes sur Android et iOS avec Flutter ou Ionic.
+                                    Building high-performance applications for Android and iOS using Flutter or Ionic.
                                 </p>
                             </div>
                         </div>
                     </div>
+               
 
                     {/* Service 3 */}
                     <div className='w-full flex gap-10 py-10 border-t border-white/20 flex-col md:flex-row'>
@@ -75,7 +76,7 @@ const Services = () => {
                             </div>
                             <div className='w-full md:w-[50%]'>
                                 <p className='text-[#ddd]'>
-                                    Conception et mise en ligne de boutiques e-commerce avec paiement en ligne, gestion de produits et SEO.
+                                    Designing and launching e-commerce stores with online payments, product management, and SEO.
                                 </p>
                             </div>
                         </div>

@@ -6,6 +6,7 @@ import Portfolio from './portfolio'
 import Experience from './experience-section'
 import Testimonials from './testimonials'
 import Clients from './clients'
+import Team from './team'
 import Blog from './blog'
 import Footer from './footer'
 import ScrollButton from './scroll-button'
@@ -24,6 +25,7 @@ export const Home = () => {
             {/* <Testimonials /> */}
             <Clients />
             <Blog />
+            <Team/>
             <Footer />
             <ScrollButton />
             <Cursor />

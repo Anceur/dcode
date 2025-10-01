@@ -128,10 +128,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
                         <LucideExternalLink size={18} />
                         Live Preview
                     </button>
-                    <button className='flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full transition-colors'>
-                        <LucideCode size={18} />
-                        View Code
-                    </button>
+                  
                 </div>
             </div>
         </motion.div>
@@ -146,7 +143,7 @@ const Portfolio = () => {
             type: 'mobile',
             year: '2025',
             bgColor: 'bg-gradient-to-br from-pink-400 to-yellow-300',
-            imageUrl: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+            imageUrl: '2.png',
             technologies: ['Ionic', 'Firebase', 'Capacitor', 'Firestore', 'Push Notifications'],
             features: [
                 'Browse a wide variety of perfumes by category or scent',
@@ -163,7 +160,7 @@ const Portfolio = () => {
             type: 'mobile',
             year: '2025',
             bgColor: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-            imageUrl: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+            imageUrl: '1.png',
             technologies: ['Ionic', 'Firebase', 'Capacitor', 'Firestore', 'Stripe API'],
             features: [
                 'Product browsing with categories and filters',
