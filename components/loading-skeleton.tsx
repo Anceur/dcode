@@ -1,8 +1,8 @@
 'use client'
-import { motion, useAnimation } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
-const loadingContainer = {
+const loadingContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -12,7 +12,7 @@ const loadingContainer = {
     },
 };
 
-const loadingText = {
+const loadingText: Variants = {
     hidden: { opacity: 1 },
     visible: {
         opacity: 0,
@@ -20,12 +20,10 @@ const loadingText = {
             duration: 1,
             repeat: Infinity,
             repeatType: 'reverse',
-
         },
     },
-
     exit: {
-        y: -200,
+        y: -200, // Move up by 20px
         opacity: 0,
         transition: {
             duration: 1,
