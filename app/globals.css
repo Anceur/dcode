@@ -35,11 +35,19 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
-  
   color: rgb(var(--foreground-rgb));
   background: #1d1d1d;
-  overflow-x:hidden;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 @layer utilities {
@@ -86,7 +94,8 @@ body {
 .loader-wrap svg {
   position: absolute;
   top: 0;
-  width: 100vw;
+  left: 0;
+  width: 100%;
   height: 110vh;
   fill: #1a1a1a;
 }
@@ -183,7 +192,6 @@ body {
   -webkit-text-stroke: 1px #fff;
 }
 
-
 .item:nth-of-type(even) h4 {
   color: transparent;
   -webkit-text-stroke: 0.5px #fff;
@@ -194,12 +202,20 @@ body {
   -webkit-text-stroke: 1px #fff;
 }
 
-
 .itemImg:nth-of-type(even) {
   margin-top: -180px;
-
 }
 
 .itemImg:nth-of-type(odd) {
   margin-bottom: -180px;
+}
+
+@media (max-width: 768px) {
+  .itemImg:nth-of-type(even) {
+    margin-top: -60px;
+  }
+
+  .itemImg:nth-of-type(odd) {
+    margin-bottom: -60px;
+  }
 }

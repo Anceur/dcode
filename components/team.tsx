@@ -1,9 +1,9 @@
 "use client"
 import type React from "react"
 import { useState } from "react"
-import { Star, Award, Trophy, Mail, Github, Linkedin, Code, Cpu, Smartphone, Globe, Calendar } from "lucide-react"
+import { Star, Award, Trophy, Mail, Github, Linkedin, Code, Cpu, Smartphone, Globe, Calendar, Palette, Video } from "lucide-react"
 
-type TierType = "fullstack" | "frontend" | "backend"
+type TierType = "fullstack" | "frontend" | "backend" | "uiux" | "filmmaker"
 
 interface Developer {
   id: number
@@ -17,6 +17,16 @@ interface Developer {
   skills: string[]
   github: string
   linkedin: string
+}
+
+interface TierConfigShape {
+  icon: React.ReactElement
+  color: string
+  bgGradient: string
+  cardBg: string
+  borderColor: string
+  textColor: string
+  badgeGlow: string
 }
 
 const TeamPage = () => {
@@ -62,7 +72,6 @@ const TeamPage = () => {
       github: "emmarodriguez",
       linkedin: "emmarodriguez",
     },
-    
     {
       id: 6,
       name: "Anceur Amar",
@@ -89,20 +98,35 @@ const TeamPage = () => {
       github: "jameswilson",
       linkedin: "jameswilson",
     },
+    {
+      id: 8,
+      name: "Youcef CHEKIRINE",
+      avatar: "youcef.png",
+      tier: "uiux",
+      role: "UI/UX Designer",
+      portfolio: "",
+      email: "",
+      phone: "",
+      skills: ["Figma", "UI Design", "UX Research", "Prototyping"],
+      github: "",
+      linkedin: "",
+    },
+    {
+      id: 9,
+      name: "Benamara Radouane",
+      avatar: "redouan.png",
+      tier: "filmmaker",
+      role: "Filmmaker",
+      portfolio: "",
+      email: "",
+      phone: "",
+      skills: ["Videography", "Editing", "Color Grading", "Storytelling"],
+      github: "",
+      linkedin: "",
+    },
   ]
 
-  const tierConfig: Record<
-    TierType,
-    {
-      icon: React.ReactElement
-      color: string
-      bgGradient: string
-      cardBg: string
-      borderColor: string
-      textColor: string
-      badgeGlow: string
-    }
-  > = {
+  const tierConfig: Record<TierType, TierConfigShape> = {
     fullstack: {
       icon: <Trophy className="w-5 h-5" />,
       color: "from-blue-500 via-cyan-500 to-teal-500",
@@ -130,6 +154,32 @@ const TeamPage = () => {
       textColor: "text-amber-300",
       badgeGlow: "shadow-orange-500/50",
     },
+    uiux: {
+      icon: <Palette className="w-5 h-5" />,
+      color: "from-fuchsia-500 via-purple-500 to-violet-500",
+      bgGradient: "bg-gradient-to-br from-fuchsia-900/20 via-purple-900/20 to-violet-900/20",
+      cardBg: "bg-gradient-to-br from-slate-900/90 via-gray-900/90 to-purple-900/10",
+      borderColor: "border-purple-500/30 hover:border-purple-400/60",
+      textColor: "text-purple-300",
+      badgeGlow: "shadow-purple-500/50",
+    },
+    filmmaker: {
+      icon: <Video className="w-5 h-5" />,
+      color: "from-red-500 via-rose-500 to-pink-500",
+      bgGradient: "bg-gradient-to-br from-red-900/20 via-rose-900/20 to-pink-900/20",
+      cardBg: "bg-gradient-to-br from-slate-900/90 via-gray-900/90 to-red-900/10",
+      borderColor: "border-red-500/30 hover:border-red-400/60",
+      textColor: "text-red-300",
+      badgeGlow: "shadow-red-500/50",
+    },
+  }
+
+  const tierDisplayNames: Record<TierType, string> = {
+    fullstack: "Full Stack",
+    frontend: "Frontend",
+    backend: "Backend",
+    uiux: "UI/UX",
+    filmmaker: "Filmmaker",
   }
 
   const filteredDevelopers = selectedTier === "all" ? developers : developers.filter((dev) => dev.tier === selectedTier)
@@ -142,7 +192,6 @@ const TeamPage = () => {
         <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-indigo-600/5 via-violet-600/5 to-transparent -rotate-12 animate-pulse delay-700"></div>
       </div>
 
-      {/* Hero Header */}
       <div className="relative z-10 pt-20 pb-16 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-6 py-3 mb-8">
@@ -176,11 +225,20 @@ const TeamPage = () => {
               <Smartphone className="w-5 h-5 text-blue-400" />
               <span>Full Stack Developers</span>
             </div>
+            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
+            <div className="flex items-center space-x-2">
+              <Palette className="w-5 h-5 text-purple-400" />
+              <span>UI/UX Designers</span>
+            </div>
+            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
+            <div className="flex items-center space-x-2">
+              <Video className="w-5 h-5 text-red-400" />
+              <span>Filmmakers</span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Filter Section */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Developer Specializations</h2>
@@ -206,7 +264,7 @@ const TeamPage = () => {
             {Object.keys(tierConfig).map((tierKey) => {
               const tier = tierKey as TierType
               const config = tierConfig[tier]
-              const displayName = tier === "fullstack" ? "Full Stack" : tier === "frontend" ? "Frontend" : "Backend"
+              const displayName = tierDisplayNames[tier]
               return (
                 <button
                   key={tier}
@@ -232,18 +290,15 @@ const TeamPage = () => {
           </div>
         </div>
 
-        {/* Developers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredDevelopers.map((dev) => {
             const config = tierConfig[dev.tier]
-            const displayTier =
-              dev.tier === "fullstack" ? "Full Stack" : dev.tier === "frontend" ? "Frontend" : "Backend"
+            const displayTier = tierDisplayNames[dev.tier]
             return (
               <div
                 key={dev.id}
                 className={`group relative ${config.cardBg} backdrop-blur-xl rounded-2xl border-2 ${config.borderColor} p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/10 ${config.bgGradient}`}
               >
-                {/* Tier Badge */}
                 <div
                   className={`absolute -top-3 -right-3 bg-gradient-to-r ${config.color} text-white px-3 py-1 rounded-xl text-xs font-bold flex items-center space-x-1 shadow-lg ${config.badgeGlow}`}
                 >
@@ -251,7 +306,6 @@ const TeamPage = () => {
                   <span>{displayTier}</span>
                 </div>
 
-                {/* Developer Avatar Section */}
                 <div className="text-center mb-5">
                   <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <div className={`absolute inset-0 bg-gradient-to-br ${config.color} opacity-20`}></div>
@@ -280,42 +334,46 @@ const TeamPage = () => {
                   </div>
                 </div>
 
-            
-
-                {/* Contact Actions */}
                 <div className="space-y-3">
-                  <a
-                    href={`mailto:${dev.email}`}
-                    className="w-full bg-gradient-to-r from-slate-700 to-slate-600 border border-slate-600 text-white py-2 px-3 rounded-lg hover:from-blue-600 hover:to-blue-500 hover:border-blue-400 hover:shadow-md hover:shadow-blue-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group font-medium text-sm"
-                  >
-                    <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                    <span>Email</span>
-                  </a>
+                  {dev.email && (
+                    <a
+                      href={`mailto:${dev.email}`}
+                      className="w-full bg-gradient-to-r from-slate-700 to-slate-600 border border-slate-600 text-white py-2 px-3 rounded-lg hover:from-blue-600 hover:to-blue-500 hover:border-blue-400 hover:shadow-md hover:shadow-blue-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group font-medium text-sm"
+                    >
+                      <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                      <span>Email</span>
+                    </a>
+                  )}
 
                   <div className="grid grid-cols-2 gap-3">
-                    <a
-                      href={`https://github.com/${dev.github}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-slate-700 to-slate-600 border border-slate-600 text-white py-2 px-3 rounded-lg hover:from-gray-800 hover:to-gray-700 hover:border-gray-500 hover:shadow-md hover:shadow-gray-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group font-medium text-sm"
-                    >
-                      <Github className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                      <span>GitHub</span>
-                    </a>
+                    {dev.github && (
+                      <a
+                        href={`https://github.com/${dev.github}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gradient-to-r from-slate-700 to-slate-600 border border-slate-600 text-white py-2 px-3 rounded-lg hover:from-gray-800 hover:to-gray-700 hover:border-gray-500 hover:shadow-md hover:shadow-gray-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group font-medium text-sm"
+                      >
+                        <Github className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                        <span>GitHub</span>
+                      </a>
+                    )}
 
-                    <a
-                      href={`https://linkedin.com/in/${dev.linkedin}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-slate-700 to-slate-600 border border-slate-600 text-white py-2 px-3 rounded-lg hover:from-blue-700 hover:to-blue-600 hover:border-blue-500 hover:shadow-md hover:shadow-blue-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group font-medium text-sm"
-                    >
-                      <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                      <span>LinkedIn</span>
-                    </a>
+                    {dev.linkedin && (
+                      <a
+                        href={`https://www.linkedin.com/in/${dev.linkedin}/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`bg-gradient-to-r from-slate-700 to-slate-600 border border-slate-600 text-white py-2 px-3 rounded-lg hover:from-blue-700 hover:to-blue-600 hover:border-blue-500 hover:shadow-md hover:shadow-blue-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group font-medium text-sm ${
+                          !dev.github ? "col-span-2" : ""
+                        }`}
+                      >
+                        <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                        <span>LinkedIn</span>
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                {/* Hover Glow Effect */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-t ${config.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl pointer-events-none`}
                 ></div>

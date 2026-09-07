@@ -12,7 +12,7 @@ const Footer = () => {
                     <div className='flex gap-8'>
                         {/* Instagram */}
                         <a 
-                            href="#" 
+                            href="https://www.instagram.com/dzair.code/" 
                             className='group relative w-14 h-14 border border-white/30 rounded-full flex items-center justify-center hover:border-white/80 transition-all duration-300 hover:scale-110'
                         >
                             <svg className='w-6 h-6 fill-white/70 group-hover:fill-white transition-all duration-300' viewBox="0 0 24 24">
@@ -25,7 +25,7 @@ const Footer = () => {
 
                         {/* Facebook */}
                         <a 
-                            href="#" 
+                            href="https://web.facebook.com/profile.php?id=61581083883229" 
                             className='group relative w-14 h-14 border border-white/30 rounded-full flex items-center justify-center hover:border-white/80 transition-all duration-300 hover:scale-110'
                         >
                             <svg className='w-6 h-6 fill-white/70 group-hover:fill-white transition-all duration-300' viewBox="0 0 24 24">
@@ -37,15 +37,15 @@ const Footer = () => {
                         </a>
 
                         {/* LinkedIn */}
-                        <a 
-                            href="#" 
+                                <a 
+                            href="https://www.tiktok.com/@dzair.code" 
                             className='group relative w-14 h-14 border border-white/30 rounded-full flex items-center justify-center hover:border-white/80 transition-all duration-300 hover:scale-110'
                         >
                             <svg className='w-6 h-6 fill-white/70 group-hover:fill-white transition-all duration-300' viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.968-1.166-1.954-1.282-2.646h.004C16.362 1.026 16.36.5 16.359.5h-3.474v14.887c0 .188 0 .376-.008.562-.001.023-.003.045-.005.07-.001.01-.001.02-.002.03a4.283 4.283 0 0 1-2.156 3.404 4.253 4.253 0 0 1-2.104.554c-2.366 0-4.284-1.928-4.284-4.31 0-2.382 1.918-4.31 4.284-4.31.447 0 .878.07 1.283.198V7.987a7.788 7.788 0 0 0-1.283-.107C4.184 7.88.5 11.576.5 16.13.5 20.684 4.184 24.38 8.615 24.38c4.43 0 8.115-3.696 8.115-8.25V9.634a9.63 9.63 0 0 0 5.62 1.805V7.965c-1.09 0-2.11-.34-2.95-.918a5.518 5.518 0 0 1-.079-1.485z"/>
                             </svg>
                             <div className='absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                <span className='text-xs text-white/80 whitespace-nowrap'>LinkedIn</span>
+                                <span className='text-xs text-white/80 whitespace-nowrap'>TikTok</span>
                             </div>
                         </a>
                     </div>
@@ -54,8 +54,8 @@ const Footer = () => {
 
             {/* Copyright Section */}
             <div className='bg-[#020617]  flex lg:flex-row flex-col justify-between lg:items-center px-5 sm:px-10 md:px-32 lg:px-20 xl:px-32 py-10'>
-                <p className='text-xl font-bold text-white'>Portfolio</p>
-                <p className='text-[#ddd] text-sm'>© 2024 Portfolio.</p>
+                <p className='text-xl font-bold text-white'>Dzair Code</p>
+                <p className='text-[#ddd] text-sm'>© Dzair Code.</p>
             </div>
         </>
     )

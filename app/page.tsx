@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { LoadingSkeleton } from "@/components/loading-skeleton";
 import { Home } from "@/components/home";
 import Cursor from "@/components/cursor";
+import WhatsAppButton from "@/components/whatsapp-button";
 
 export default function Page() {
   const [loading, setLoading] = useState(true)
@@ -21,6 +22,7 @@ export default function Page() {
       ) : <LoadingSkeleton />
       }
 
+      <WhatsAppButton />
     </>
   )
 }

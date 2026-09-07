@@ -73,11 +73,11 @@ const Navbar = () => {
                 
                 <RevealLinks open={open} isFixed={isFixed} />
                 
-                <Link href="/contact">
+                {/* <Link href="/contact">
                     <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition duration-300">
                         Contact
                     </button>
-                </Link>
+                </Link> */}
 
                 <LucideMenu 
                     className='block lg:hidden cursor-pointer'
