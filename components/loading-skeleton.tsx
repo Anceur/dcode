@@ -25,7 +25,7 @@ const loadingText = {
     },
 
     exit: {
-        y: -200, // Move up by 20px
+        y: -200,
         opacity: 0,
         transition: {
             duration: 1,
